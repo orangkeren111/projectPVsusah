@@ -6,6 +6,7 @@ const api = {
   consoleLogger: (message) => {
     ipcRenderer.invoke("consoleLogger", message)
   },
+  // User Page
   save: (users) => {
     ipcRenderer.invoke("save", users);
   },
@@ -17,6 +18,20 @@ const api = {
   },
   makeInvoice: (nota) => {
     ipcRenderer.invoke("makeInvoice", nota);
+  },
+
+  // Admin Page
+  getFilm: function() {
+    return ipcRenderer.invoke("getFilm");
+  },
+  saveFilm: function(film) {
+    ipcRenderer.send("saveFilm", film)
+  },
+  getSales: function() {
+    return ipcRenderer.invoke("getSales");
+  },
+  getCust: function() {
+    return ipcRenderer.invoke("getCust");
   },
 }
 

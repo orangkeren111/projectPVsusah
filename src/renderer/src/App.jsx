@@ -1,19 +1,24 @@
 import { useEffect, useContext, lazy, Suspense, useState } from "react";
 import "./App.css";
 
-const Home = lazy(() => import("./Pages/Home"));
-const SignIn = lazy(() => import("./Pages/SignIn"));
-const SignUp = lazy(() => import("./Pages/SignUp"));
-const Welcome = lazy(() => import("./Pages/Welcome"));
-const ErrorPage = lazy(() => import("./Pages/ErrorPage"));
-const Play = lazy(() => import("./Pages/Play"));
-const Payment = lazy(() => import("./Pages/Payment"));
+const Home = lazy(() => import("./UserPage/Pages/Home"));
+const SignIn = lazy(() => import("./UserPage/Pages/SignIn"));
+const SignUp = lazy(() => import("./UserPage/Pages/SignUp"));
+const Welcome = lazy(() => import("./UserPage/Pages/Welcome"));
+const ErrorPage = lazy(() => import("./UserPage/Pages/ErrorPage"));
+const Play = lazy(() => import("./UserPage/Pages/Play"));
+const Payment = lazy(() => import("./UserPage/Pages/Payment"));
 
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { UserContext } from "./Context/UserContext";
-import Loading from "./componets/Loading/Loading";
-import Navbar from "./componets/Header/Navbar";
-import NavbarWithoutUser from "./componets/Header/NavbarWithoutUser";
+
+import Loading from "./UserPage/componets/Loading/Loading";
+import NavbarWithoutUser from "./UserPage/componets/Header/NavbarWithoutUser";
+import Navbar from "./UserPage/componets/Header/Navbar";
+import { UserContext } from "./UserPage/Context/UserContext";
+import DashboardPage from "./AdminPage/DashboardPage";
+import MasterFilm from "./AdminPage/MasterFilm";
+import MasterCust from "./AdminPage/MasterCust";
+import Sales from "./AdminPage/Sales";
 
 function App() {
   const { user, login, logout } = useContext(UserContext);
@@ -39,8 +44,15 @@ function App() {
               <Route path="/play/:id" element={<Play />} />
             </>
           ) : null}
+
+          {/* User Page */}
           <Route path="/play/:id" element={<Play />} />
           <Route path="/payment" element={<Payment />} />
+
+          {/* Admin Page */}
+          <Route path="/masterfilm" element= {<MasterFilm />} />
+          <Route path="/mastercust" element= {<MasterCust />} />
+          <Route path="/sales" element= {<Sales />} />
 
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />

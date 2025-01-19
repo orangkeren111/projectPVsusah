@@ -56,6 +56,7 @@ app.whenReady().then(() => {
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
 
+  // Handle User Page
   ipcMain.handle("save", (event, users) => {
     fs.writeFileSync("./user.json", JSON.stringify(users));
   });
@@ -100,6 +101,25 @@ Total                                    $${nota.cost*108/100}
   });
   ipcMain.handle("loadMovie", () => {
     return JSON.parse(fs.readFileSync("./film.json"));
+  });
+
+  // Handle Admin Page
+  ipcMain.handle("getFilm", function (event) {
+    let film = JSON.parse(fs.readFileSync("./film.json"));
+    return film;
+  });
+  ipcMain.on("saveFilm", function(event, newFilm) {
+    let film = JSON.parse(fs.readFileSync("./film.json"));
+    film = newFilm;
+    fs.writeFileSync("./film.json", JSON.stringify(film,null,2));
+  })
+  ipcMain.handle("getSales", function (event) {
+    let sales = JSON.parse(fs.readFileSync("./transaksi.json"));
+    return sales;
+  });
+  ipcMain.handle("getCust", function (event) {
+    let cust = JSON.parse(fs.readFileSync("./user.json"));
+    return cust;
   });
 
   createWindow()
