@@ -26,16 +26,16 @@ export default function UserProvider({ children }){
   }
 
   const login = (username, password) => {
-    // tambahanku cuman disini
-    // if (username=== "admin@gmail.com" && password==="admin") {
-    //   setUser((user) => ({
-    //     ...user,
-    //     username: username,
-    //     password: password,
-    //   }));
-    //   console.log(user)
-    //   return 1
-    // }
+    if (username=== "admin@gmail.com" && password==="admin") {
+      setUser((user) => ({
+        ...user,
+        username: username,
+        password: password,
+        name: "admin"
+      }));
+      console.log(user)
+      return true
+    }
     const currUser = users.find(user => user.username === username && user.password === password)
     if (currUser){
       //login success

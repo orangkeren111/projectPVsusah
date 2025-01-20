@@ -14,6 +14,10 @@ module.exports = {
       '3xl': '2200px',
     },
     extend: {
+      backgroundImage: {
+        'admin-bg': "linear-gradient(to bottom, #ffffff, #f8f9fa)",
+        'user-bg': "linear-gradient(to bottom, #000000, #222222)",
+      },
       padding:{
         '85vh': '85vh',
         '50vh': '50vh',

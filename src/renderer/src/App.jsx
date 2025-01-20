@@ -19,40 +19,62 @@ import DashboardPage from "./AdminPage/DashboardPage";
 import MasterFilm from "./AdminPage/MasterFilm";
 import MasterCust from "./AdminPage/MasterCust";
 import Sales from "./AdminPage/Sales";
+import Layout from "./AdminPage/Layout";
 
 function App() {
   const { user, login, logout } = useContext(UserContext);
   const location = useLocation();
   const [currentUser, setCurrentUser] = useState({username: '', password: ''})
+  const [backgroundColor, setBackgroundColor] = useState("bg-user-bg");
   
   useEffect(() => {
       setCurrentUser(user);
       console.log(user);
+      if(currentUser.username === "admin@gmail.com") {
+        setBackgroundColor("bg-admin-bg")
+      } else{
+        setBackgroundColor("bg-user-bg")
+      }
   }, [location, user]);
   
 
   return (
-    <div>
+    <div className={`${backgroundColor}`}>
       {/* <Payment/> */}
-      {currentUser.username ? <Navbar></Navbar> : <NavbarWithoutUser></NavbarWithoutUser>}
+      {currentUser.username ? (
+        currentUser.username === "admin@gmail.com" ? (
+          <Layout />
+        ) : (
+          <Navbar />
+        )
+      ) : <NavbarWithoutUser></NavbarWithoutUser>}
       <Suspense replace fallback={<Loading />}>
         <Routes>
-          <Route index path="/" element={currentUser.username ? <Home /> : <Welcome />} />
+          <Route index path="/" element={currentUser.username ? (
+            currentUser.username === "admin@gmail.com" ? (
+              <DashboardPage />
+            ) : (
+              <Home />
+            )
+          ) : <Welcome />} />
           {currentUser.username ? (
-            <>
-              <Route path="/home" element={<Home />} />
-              <Route path="/play/:id" element={<Play />} />
-            </>
-          ) : null}
+              <>
+                <Route path="/home" element={<Home />} />
+                <Route path="/play/:id" element={<Play />} />
+              </>
+          ) : null }
 
           {/* User Page */}
           <Route path="/play/:id" element={<Play />} />
           <Route path="/payment" element={<Payment />} />
 
           {/* Admin Page */}
-          <Route path="/masterfilm" element= {<MasterFilm />} />
-          <Route path="/mastercust" element= {<MasterCust />} />
-          <Route path="/sales" element= {<Sales />} />
+          <Route path="/" element={<Layout />}>
+            <Route path="/dashboard" element= {<DashboardPage />} />
+            <Route path="/masterfilm" element= {<MasterFilm />} />
+            <Route path="/mastercust" element= {<MasterCust />} />
+            <Route path="/sales" element= {<Sales />} />
+          </Route>
 
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />

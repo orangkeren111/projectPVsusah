@@ -24,11 +24,11 @@ function SignIn() {
     if (email && password){
       let success = login(email, password);
       // Tambahan logic dari aku
-      // if (success==1){
-      //   console.log(success)
-      //   setLoader(true);
-      //   navigate('/dashboard')
-      // }
+      if (email === "admin@gmail.com" && password === "admin"){
+        console.log("Masuk admin harusnya")
+        setLoader(true);
+        navigate('/dashboard')
+      }
       if (success){
         setLoader(true);
         navigate('/');
