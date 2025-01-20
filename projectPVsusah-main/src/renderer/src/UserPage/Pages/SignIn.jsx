@@ -29,7 +29,7 @@ function SignIn() {
         setLoader(true);
         navigate('/dashboard')
       }
-      if (success){
+      else if (success){
         setLoader(true);
         navigate('/');
       }

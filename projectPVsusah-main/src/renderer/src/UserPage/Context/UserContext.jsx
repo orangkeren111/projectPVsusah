@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const UserContext = createContext(null);
 
 export default function UserProvider({ children }){
+  const navigate = useNavigate();
+
   const [user, setUser] = useState({
     username: '',
     password: '',
@@ -31,8 +34,9 @@ export default function UserProvider({ children }){
         ...user,
         username: username,
         password: password,
-        name: "admin"
+        name: "admin",
       }));
+      navigate('/dashboard')
       console.log(user)
       return true
     }

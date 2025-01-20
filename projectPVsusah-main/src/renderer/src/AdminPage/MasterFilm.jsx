@@ -59,7 +59,6 @@ export default function MasterFilm() {
 
   function process() {
   
-    
     if (title == "") {
       setErrorMessage("Judul tidak boleh kosong!");
       setOpenErrorSnackbar(true);
@@ -222,10 +221,6 @@ export default function MasterFilm() {
     }
   ];
   
-
-
-
-
   return <div>
     <h1>Master Film</h1>
     <DataGrid

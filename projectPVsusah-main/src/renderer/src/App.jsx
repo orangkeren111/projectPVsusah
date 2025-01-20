@@ -43,7 +43,7 @@ function App() {
       {/* <Payment/> */}
       {currentUser.username ? (
         currentUser.username === "admin@gmail.com" ? (
-          <Layout />
+          ""
         ) : (
           <Navbar />
         )
@@ -53,9 +53,11 @@ function App() {
           <Route index path="/" element={currentUser.username ? (
             currentUser.username === "admin@gmail.com" ? (
               <DashboardPage />
+              // console.log(location)
             ) : (
               <Home />
             )
+  
           ) : <Welcome />} />
           {currentUser.username ? (
               <>
