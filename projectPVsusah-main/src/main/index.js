@@ -104,10 +104,6 @@ Total                                    $${nota.cost*108/100}
   });
 
   // Handle Admin Page
-  ipcMain.handle("getFilm", function (event) {
-    let film = JSON.parse(fs.readFileSync("./film.json"));
-    return film;
-  });
   ipcMain.on("saveFilm", function(event, newFilm) {
     let film = JSON.parse(fs.readFileSync("./film.json"));
     film = newFilm;

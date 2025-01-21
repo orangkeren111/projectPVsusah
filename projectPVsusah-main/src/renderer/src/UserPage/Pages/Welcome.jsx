@@ -186,23 +186,20 @@ function Welcome() {
               width: '75%'                        
             }}>
               <div>
-                <h1 style={{
-                  marginTop: '1rem',               
-                  marginBottom: '1.5rem',          
-                  fontSize: '2rem',                
-                  fontWeight: '600',               
-                  textAlign: 'center',             
+                <h1 style={{            
+                  marginBottom: '1.5rem',                        
+                  fontWeight: '600',                         
                   color: 'white',                  
                   marginTop: '0',                  
                   textAlign: 'left',               
                   marginLeft: '2rem',              
-                  fontSize: '3rem',                
+                  fontSize: '3rem',      
+                            
                 }}>
                   We’re compatible.
                 </h1>
                 <h1 style={{
-                  margin: '1rem',                  
-                  textAlign: 'center',             
+                  margin: '1rem',                             
                   color: '#a1a1aa',                
                   fontWeight: '300',               
                   fontSize: '1.25rem',             

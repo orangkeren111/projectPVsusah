@@ -19,7 +19,7 @@ export default function MasterFilm() {
     "Thriller"
   ]
   useEffect(() => {
-    window.api.getFilm().then(function (data) {
+    window.api.loadMovie().then(function (data) {
       setFilm(data);
     });
   }, []);
