@@ -6,7 +6,7 @@ import { ClipLoader } from "react-spinners";
 import { UserContext } from "../Context/UserContext";
 
 import GoogleLogo from "../images/GoogleLogo.png";
-import WelcomePageBanner from "../images/WelcomePageBanner.jpg";
+import WelcomePageBanner from "../images/WelcomePageBanner.jpeg";
 
 function SignIn() {
   const { login} = useContext(UserContext);

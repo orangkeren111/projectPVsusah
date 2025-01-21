@@ -7,12 +7,11 @@ const drawerWidth = 180;
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import WelcomePageBanner from "../images/WelcomePageBanner.jpg";
+import WelcomePageBanner from "../images/WelcomePageBanner.jpeg";
 import { useNavigate } from 'react-router-dom';
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from '../Context/UserContext';
 import Footer2 from '../componets/Footer/Footer';
-
 
 const playVideo = true;
 const data = [];
@@ -41,7 +40,7 @@ export default function Home() {
         setDataHover(new Array(data.length).fill(false))
         console.log(data)
       })
-    }  
+    }
     
     const theme = createTheme({
       palette: {
@@ -130,7 +129,7 @@ export default function Home() {
                   //     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                   //     allowfullscreen
                   //     sx={{height:'20vh'}}>
-                      
+              
                   // </iframe>
                   
                   <>
@@ -144,11 +143,9 @@ export default function Home() {
                   <Typography variant="body3" sx={{ color: 'text.secondary', fontSize:'1vw' }}>
                       {d.viewer} - {d.uploaded}
                   </Typography>
-                 </Box>
-                         
+                 </Box>  
                 </CardContent>
             </>
-
 
                   ) : (
                     <CardMedia component="img" 

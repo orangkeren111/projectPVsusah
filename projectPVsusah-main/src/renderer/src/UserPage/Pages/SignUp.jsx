@@ -6,7 +6,7 @@ import { Fade } from "react-reveal";
 
 import { UserContext } from "../Context/UserContext";
 import { ClipLoader } from "react-spinners";
-import WelcomePageBanner from "../images/WelcomePageBanner.jpg";
+import WelcomePageBanner from "../images/WelcomePageBanner.jpeg";
 
 function SignUp() {
   const {signUp } = useContext(UserContext);
