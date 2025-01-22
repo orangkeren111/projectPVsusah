@@ -103,8 +103,23 @@ export default function UserProvider({ children }){
     }
   };
 
+  const searchGenre = (genre) => {
+    let temp = []
+    if(genre === "All"){
+      temp = film
+    }
+    else{
+      film.forEach((data) => {
+        if(data.genre.includes(genre)){
+          temp.push(data)
+        }
+      })
+    }
+    setSearchData(temp);
+  }
+
   return (
-    <UserContext.Provider value={{ user, login, logout, signUp, updateSubscribe, search, film, searchData }}>
+    <UserContext.Provider value={{ user, login, logout, signUp, updateSubscribe, search, film, searchData, searchGenre }}>
       {children}
     </UserContext.Provider>
   );
