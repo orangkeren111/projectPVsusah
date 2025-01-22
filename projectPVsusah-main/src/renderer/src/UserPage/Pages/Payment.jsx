@@ -51,6 +51,11 @@ function Payment() {
   };
 
   return (
+    <Box sx={{
+      paddingTop:"10vh",
+      paddingBottom:"10vh",
+      backgroundColor:"#620000",
+    }}>
     <Box
       sx={{
         display: "flex",
@@ -61,10 +66,10 @@ function Payment() {
         height: 500,
         margin: "auto",
         padding: 4,
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "#fffaf0",
         borderRadius: 4,
         boxShadow: 3,
-        marginTop:10,
+        
       }}
     >
       <Typography variant="h5" sx={{ marginBottom: 2 }}>
@@ -107,19 +112,20 @@ function Payment() {
       <Box sx={{ display: "flex", gap: 2 }}>
         <Button
           variant="outlined"
-          color="secondary"
+          color="error"
           onClick={() => navigate("/")}
         >
           Cancel
         </Button>
         <Button
           variant="contained"
-          color="primary"
+          color="success"
           onClick={() => handleSubscribe()}
         >
           Subscribe
         </Button>
       </Box>
+    </Box>
     </Box>
   );
 }
