@@ -221,7 +221,7 @@ export default function MasterFilm() {
     }
   ];
   
-  return <div>
+  return <div style={{overflowY: "auto", maxHeight: "100%", scrollbarWidth: "none"}}>
     <h1>Master Film</h1>
     <DataGrid
       columns={columns}

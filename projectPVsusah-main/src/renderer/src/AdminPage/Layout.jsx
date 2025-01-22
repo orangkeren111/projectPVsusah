@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Box,
   Drawer,
@@ -10,18 +10,20 @@ import {
   Collapse,
 } from "@mui/material";
 import { Dashboard, ExpandLess, ExpandMore, Logout, Settings } from "@mui/icons-material";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import PersonIcon from '@mui/icons-material/Person';
 import MovieIcon from '@mui/icons-material/Movie';
+import { UserContext } from "../UserPage/Context/UserContext";
 
 export default function Layout() {
   const [isMasterOpen, setIsMasterOpen] = useState(false);
+  const navigate = useNavigate();
+  const { logout } = useContext(UserContext);
 
   const handleLogout = () => {
-    // Logic untuk logout (hapus token, session, dll.)
-    console.log("Logged out");
-    // navigate("/login");
+    navigate("/")
+    logout()
   };
 
   const linkStyles = {

@@ -8,9 +8,10 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
+import { Stack, Button, Box } from "@mui/material";
 
 function Navbar(props) {
-  const { user, login, logout, search } = useContext(UserContext);
+  const { user, login, logout, search, film, searchGenre } = useContext(UserContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -86,6 +87,9 @@ function Navbar(props) {
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create('width'),
       width: '100%',
+      [theme.breakpoints.up('xs')]: {
+        width: '10ch',
+      },
       [theme.breakpoints.up('sm')]: {
         width: '52ch',
       },
@@ -94,6 +98,34 @@ function Navbar(props) {
       },
     },
   }));
+
+  const genreFilter = [
+    "All",
+    "Action",
+    "Adventure",
+    "Crime",
+    "Drama",
+    "Horror",
+    "Music",
+    "Musical",
+    "Romance",
+    "Sci-Fi",
+    "Thriller"
+  ]
+
+  const [activeButton, setActiveButton] = useState("All")
+
+  function ButtonFilter({ text, isActive, onClick }) {
+    return isActive ? (
+      <Button variant="contained"sx={{borderRadius:'15px', color:'grey', backgroundColor:'white'}} onClick={onClick}>{text}</Button>
+    ) : (
+      <Button variant="outlined" sx={{borderRadius:'15px',color:'white',backgroundColor:'#212121', border:'none'}} onClick={onClick}>{text}</Button>
+    )
+  }
+  function buttonSetter(button) {
+    setActiveButton(button)
+    searchGenre(button)
+  }
 
   return (
     <>
@@ -130,17 +162,27 @@ function Navbar(props) {
                 )}
               </div>
               <div className={location.pathname === "/" ? "ms-6" : "hidden"}>
-                <Search>
-                  <SearchIconWrapper>
-                    <SearchIcon />
-                  </SearchIconWrapper>
-                  <StyledInputBase
+                <Box sx={{backgroundColor: "grey",
+                          opacity: "50%",
+                          width: {
+                            sm: "52ch",
+                            md: "105ch"
+                          }, 
+                          borderRadius: "12px", 
+                          padding: "2px 10px", 
+                          margin: "0px 30px"}}>
+                  <SearchIcon sx={{margin: "0px 5px"}} />
+                  <InputBase 
+                    sx={{width: {
+                      sm: "92%",
+                      md: "96%"
+                    } }}
                     placeholder="Search…"
                     inputProps={{ 'aria-label': 'search' }}
                     value={inputSearch}
                     onChange={searching}
                   />
-                </Search>
+                </Box>
               </div>
               <div className="ml-auto">
                 <div className="flex">
@@ -192,7 +234,7 @@ function Navbar(props) {
                         alt="NETFLIX"
                       />
                     </Link>
-                    <ul class="absolute hidden text-white pt-1 -ml-20 group-hover:block transition ease-in-out delay-150">
+                    <ul style={{zIndex: "1"}} class="absolute hidden text-white pt-1 -ml-20 group-hover:block transition ease-in-out delay-150">
                       <li>
                         <Link
                           className="cursor-pointer rounded-t bg-stone-900 font-bold hover:border-l-4 hover:bg-gradient-to-r from-[#ff000056] border-red-800 py-2 px-4 block whitespace-no-wrap transition ease-in-out delay-150"
@@ -285,6 +327,13 @@ function Navbar(props) {
             )}
           </Transition>
         </nav>
+        <div style={{margin: "20px 0px -35px 100px", display: location.pathname === "/" && inputSearch === "" ? ("block") : ("none")}}>
+          <Stack spacing={2} direction="row">
+            {genreFilter.map((genre) => (
+              <ButtonFilter key={genre} text={genre} isActive={activeButton === genre} onClick={() => buttonSetter(genre)}></ButtonFilter>
+            ))}
+          </Stack>
+        </div>
       </header>
     </>
   );

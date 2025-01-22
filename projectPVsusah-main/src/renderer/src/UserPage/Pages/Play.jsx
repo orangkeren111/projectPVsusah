@@ -36,7 +36,7 @@ function PlayVideo() {
         <img src={currFilm.image} alt="" width="500" height="520" style={{margin: "20px 0px"}}/>
         <p style={{width: "100%"}}>{currFilm.description}</p>
       </div>
-      <div>
+      <div style={{padding: "10px 40px"}}>
       <iframe
         width="720"
         height="480"

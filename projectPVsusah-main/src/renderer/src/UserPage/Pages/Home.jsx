@@ -1,4 +1,4 @@
-import { Box, Card, Typography, Container, Grid, Grid2, Button } from '@mui/material';
+import { Box, Card, Typography, Container, Grid, Grid2, Button, Stack } from '@mui/material';
 import * as React from 'react';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from '../Context/UserContext';
 import Footer2 from '../componets/Footer/Footer';
+import zIndex from '@mui/material/styles/zIndex';
 
 const playVideo = true;
 const data = [];
@@ -91,14 +92,15 @@ export default function Home() {
       <ThemeProvider theme={theme}>
             <CssBaseline />
         <Box sx={{ backgroundColor:'#333333'}}>
+            
         <div
-                  style={{
-                    background: `linear-gradient(0deg, hsl(0deg 0% 0% / 73%) 0%, hsl(0deg 0% 0% / 73%) 35%),url(${WelcomePageBanner})`,
-                  }}
-                  className="h-[32rem] w-full sm:h-[65vh] xl:h-[80vh] bg-slate-800 relative"
-                >
+          style={{
+            background: `linear-gradient(0deg, hsl(0deg 0% 0% / 73%) 0%, hsl(0deg 0% 0% / 73%) 35%),url(${WelcomePageBanner})`,
+          }}
+          className="h-[32rem] w-full sm:h-[65vh] xl:h-[80vh] bg-slate-800 relative"
+        >
 
-                </div>
+        </div>
         <Box sx={{ marginTop: 4, padding: 3 }}>
           
         <Grid
