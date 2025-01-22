@@ -7,6 +7,7 @@ import { UserContext } from "../Context/UserContext";
 
 import GoogleLogo from "../images/GoogleLogo.png";
 import WelcomePageBanner from "../images/WelcomePageBanner.jpeg";
+import { Box, Typography } from "@mui/material";
 
 function SignIn() {
   const { login} = useContext(UserContext);
@@ -45,19 +46,43 @@ function SignIn() {
 
   return (
     <section
-      className="h-[100vh] bg-gray-50 dark:bg-gray-900"
       style={{
-        background: `linear-gradient(0deg, hsl(0deg 0% 0% / 73%) 0%, hsl(0deg 0% 0% / 73%) 35%),url(${WelcomePageBanner})`,
+          height: "36rem", 
+          width: "100%", 
+          height:"120%",
+          background: `linear-gradient(0deg, hsl(0deg 0% 0% / 50%) 0%, hsl(0deg 0% 0% / 50%) 35%),url(${WelcomePageBanner})`,
+          backgroundSize: "cover", 
+          backgroundPosition: "center", 
+          backgroundRepeat: "no-repeat", 
+          position: "relative", 
+          backgroundColor: "#1e293b",
       }}
     >
-      <div className="h-[100vh] flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div className="w-full bg-[#000000a2] rounded-lg shadow sm:my-0 md:mt-0 sm:max-w-lg xl:p-0 border-2 border-stone-800 lg:border-0">
+      <Box      
+      sx={{
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        }}>  
+        <Box 
+        sx={{
+          width: '50%',
+          backgroundColor: '#000000a2',
+          borderRadius: '8px',
+          border: '2px solid #2f2f2f', 
+        }}>
+          
           <Fade>
-            <div>
-              <div className="p-6 space-y-4 md:space-y-6 sm:p-12">
-                <h1 className="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
+            <Box>
+              <Box sx={{padding:5}}>
+                <Typography 
+                sx={{      
+                  fontSize:"24px", 
+                  fontWeight: 'bold', // font-bold
+                  color: 'white',}}>
                   Log in to your account
-                </h1>
+                </Typography>
                 <form
                   onSubmit={handleSubmit}
                   className="space-y-4 md:space-y-6"
@@ -186,11 +211,11 @@ function SignIn() {
                     </Link>
                   </p>
                 </form>
-              </div>
-            </div>
+              </Box>
+            </Box>
           </Fade>
-        </div>
-      </div>
+        </Box>
+      </Box>
     </section>
   );
 }

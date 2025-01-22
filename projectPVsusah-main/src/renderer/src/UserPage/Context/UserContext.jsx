@@ -10,12 +10,16 @@ export default function UserProvider({ children }){
   const [searchData, setSearchData] = useState([]);
 
   const [film, setFilm] = useState([]);
-  useEffect(() => {
-    window.api.loadMovie().then((data) => {
+  useEffect(() => { 
+    loadfilm()
+  }, [])
+
+  const loadfilm = () =>{
+        window.api.loadMovie().then((data) => {
       setFilm(data)
       setSearchData(data)
     })
-  }, [])
+  }
 
   const [user, setUser] = useState({
     username: '',

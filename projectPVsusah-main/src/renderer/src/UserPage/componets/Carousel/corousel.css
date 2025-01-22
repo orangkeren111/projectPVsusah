@@ -1,0 +1,21 @@
+.slideshow-container {
+    /* position: relative; */
+    /* width: 100vw;
+    height: 100wv; */
+    margin: 0 0 0 0;
+  }
+  
+  .mySlide {
+    display: none;
+  }
+  
+  .mySlide.active {
+    display: block;
+  }
+  
+  .text {
+    font-size: 24px;
+    bottom: 10px;
+    left: 20px;
+  }
+  

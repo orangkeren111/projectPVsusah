@@ -1,74 +1,119 @@
 [
-    {
-        "id": "0",
-        "title": "Inception",
-        "released": "2010",
-        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
-        "image": "https://i.ytimg.com/vi/8hP9D6kZseM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB1wXKbYgXFsxECRDF4VrjdfccQWQ",
-        "videoID": "8hP9D6kZseM",
-        "genre": "Sci-Fi, Action"
-    },
-    {
-        "id": "1",
-        "title": "The Dark Knight",
-        "released": "2008",
-        "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-        "image": "https://i.ytimg.com/vi/EXeTwQWrcwY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA1Nt5vSHNg1EtVaZeIXX9JdJKWZQ",
-        "videoID": "EXeTwQWrcwY",
-        "genre": "Action, Crime, Drama"
-    },
-    {
-        "id": "2",
-        "title": "La La Land",
-        "released": "2016",
-        "description": "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.",
-        "image": "https://i.ytimg.com/vi/0pdqf4P9MB8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCy7uj-XlzUgOjY6RHaVszDQ9_KNw",
-        "videoID": "0pdqf4P9MB8",
-        "genre": "Drama, Musical, Romance"
-    },
-    {
-        "id": "3",
-        "title": "The Matrix",
-        "released": "1999",
-        "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-        "image": "https://i.ytimg.com/vi/vKQi3bBA1y8/hqdefault.jpg",
-        "videoID": "vKQi3bBA1y8",
-        "genre": "Action, Sci-Fi"
-    },
-    {
-        "id": "4",
-        "title": "Parasite",
-        "released": "2019",
-        "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
-        "image": "https://i.ytimg.com/vi/5xH0HfJHsaY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBfJSQz1mnQHGcZORCXLXU2sZpxxA",
-        "videoID": "5xH0HfJHsaY",
-        "genre": "Drama, Thriller"
-    },
-    {
-        "id": "5",
-        "title": "Interstellar",
-        "released": "2014",
-        "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-        "image": "https://i.ytimg.com/vi/zSWdZVtXT7E/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA5yC5kE99DeuohzVRDpoEf0lAebg",
-        "videoID": "zSWdZVtXT7E",
-        "genre": "Sci-Fi, Adventure, Drama"
-    },
-    {
-        "id": "6",
-        "title": "Forrest Gump",
-        "released": "1994",
-        "description": "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal, and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
-        "image": "https://i.ytimg.com/vi/bLvqoHBptjg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDtcmfSi4GJhCNkbnn_wzzU__P7xg",
-        "videoID": "bLvqoHBptjg",
-        "genre": "Drama, Romance"
-    },
-    {
-        "id": "7",
-        "title": "Whiplash",
-        "released": "2014",
-        "description": "A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential.",
-        "image": "https://i.ytimg.com/vi/7d_jQycdQGo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAh2A9IOA3j5B7pDADJk5B25gb-3A",
-        "videoID": "7d_jQycdQGo",
-        "genre": "Drama, Music"
-    }
+  {
+    "id": "0",
+    "title": "Inception",
+    "released": "2010",
+    "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
+    "image": "https://i.ytimg.com/vi/8hP9D6kZseM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB1wXKbYgXFsxECRDF4VrjdfccQWQ",
+    "videoID": "8hP9D6kZseM",
+    "genre": "Sci-Fi, Action"
+  },
+  {
+    "id": "1",
+    "title": "The Dark Knight",
+    "released": "2008",
+    "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    "image": "https://i.ytimg.com/vi/EXeTwQWrcwY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA1Nt5vSHNg1EtVaZeIXX9JdJKWZQ",
+    "videoID": "EXeTwQWrcwY",
+    "genre": "Action, Crime, Drama"
+  },
+  {
+    "id": "2",
+    "title": "La La Land",
+    "released": "2016",
+    "description": "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.",
+    "image": "https://i.ytimg.com/vi/0pdqf4P9MB8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCy7uj-XlzUgOjY6RHaVszDQ9_KNw",
+    "videoID": "0pdqf4P9MB8",
+    "genre": "Drama, Musical, Romance"
+  },
+  {
+    "id": "3",
+    "title": "The Matrix",
+    "released": "1999",
+    "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "image": "https://i.ytimg.com/vi/vKQi3bBA1y8/hqdefault.jpg",
+    "videoID": "vKQi3bBA1y8",
+    "genre": "Action, Sci-Fi"
+  },
+  {
+    "id": "4",
+    "title": "Parasite",
+    "released": "2019",
+    "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+    "image": "https://i.ytimg.com/vi/5xH0HfJHsaY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBfJSQz1mnQHGcZORCXLXU2sZpxxA",
+    "videoID": "5xH0HfJHsaY",
+    "genre": "Drama, Thriller"
+  },
+  {
+    "id": "5",
+    "title": "Interstellar",
+    "released": "2014",
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "image": "https://i.ytimg.com/vi/zSWdZVtXT7E/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA5yC5kE99DeuohzVRDpoEf0lAebg",
+    "videoID": "zSWdZVtXT7E",
+    "genre": "Sci-Fi, Adventure, Drama"
+  },
+  {
+    "id": "6",
+    "title": "Forrest Gump",
+    "released": "1994",
+    "description": "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal, and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
+    "image": "https://i.ytimg.com/vi/bLvqoHBptjg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDtcmfSi4GJhCNkbnn_wzzU__P7xg",
+    "videoID": "bLvqoHBptjg",
+    "genre": "Drama, Romance"
+  },
+  {
+    "id": "7",
+    "title": "Whiplash",
+    "released": "2014",
+    "description": "A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential.",
+    "image": "https://i.ytimg.com/vi/7d_jQycdQGo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAh2A9IOA3j5B7pDADJk5B25gb-3A",
+    "videoID": "7d_jQycdQGo",
+    "genre": "Drama, Musical"
+  },
+  {
+    "id": 8,
+    "title": "The Gangster",
+    "released": "2019",
+    "description": "A strange murder after a car accident compels a police officer to think that it is the work of a serial killer. When a gangster falls prey to a similar incident, he joins forces with the officer.",
+    "image": "https://i.ytimg.com/vi/sU6wC6FC72U/maxresdefault.jpg",
+    "videoID": "sU6wC6FC72U",
+    "genre": "Action, Crime"
+  },
+  {
+    "id": 9,
+    "title": "Bunker: Project 12",
+    "released": "2016",
+    "description": "Soviet officials pull the plug on a dangerous experiment and seal the evidence in a remote bunker. Years later, a reckless scientist hires some mercenaries to infiltrate the bunker and recover whatever they can.",
+    "image": "https://i.ytimg.com/vi/LGE-EV17KQE/maxresdefault.jpg",
+    "videoID": "am5py-Eu03s",
+    "genre": "Sci-Fi, Action"
+  },
+  {
+    "id": 10,
+    "title": "Mohon Doa Restu",
+    "released": "2023",
+    "description": "When two childhood friends decide to tie the knot, their wedding plans are thrown off track by their well-meaning but controlling mothers.",
+    "image": "https://i.ytimg.com/vi/yElJAZUbhxg/maxresdefault.jpg",
+    "videoID": "yElJAZUbhxg",
+    "genre": "Drama"
+  },
+  {
+    "id": 11,
+    "title": "Melodylan",
+    "released": 1900,
+    "description": "Melody moves to another school trying to avoid problems. She has a bad past with David, her ex-lover. But in the new school, the problem re-emerges when Melody meets Dylan, a guy famous for being cool, likely to make trouble but still an idol because of his handsomeness. Rumors about Dylan are common knowledge.",
+    "image": "https://i.ytimg.com/vi/W4KkRQU36N4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA_qAl7cewFKBRtblSDf8bttzYMPA",
+    "videoID": "MgXSfAQmTr0",
+    "genre": "Romance, Drama"
+  },
+  {
+    "id": 12,
+    "title": "Rosa",
+    "released": "2019",
+    "description": "Rosa and Igor live under the same roof, without trespassing on each other's territory even thou they have been living together for years.",
+    "image": "https://i.ytimg.com/vi/7sfupe4_kBA/maxresdefault.jpg",
+    "videoID": "7sfupe4_kBA",
+    "genre": "Action, Musical"
+  }
 ]

@@ -106,7 +106,6 @@ function Navbar(props) {
     "Crime",
     "Drama",
     "Horror",
-    "Music",
     "Musical",
     "Romance",
     "Sci-Fi",

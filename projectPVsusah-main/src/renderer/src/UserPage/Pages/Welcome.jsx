@@ -18,6 +18,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
+import { Box, Button } from "@mui/material";
 
 function Welcome() {
   const [data, setData] = useState([]);
@@ -262,26 +263,56 @@ function Welcome() {
           <div style={{
               display: 'flex', 
               flexWrap: 'wrap',    
-              marginLeft: '2rem', 
+              marginLeft: '4rem', 
               gap: '1rem',  
-              width:'20rem',    
+              width:'120rem',    
             }}>
-              {data.map((d, index) => (
-                <Card key={index} sx={{ maxWidth: 345, m: 0.5 }}>
-                  <CardActionArea>
-                    <CardMedia
-                      component="img"
-                      height="140"
-                      image={d.image}
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        {d.title}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              ))}
+            {data.map((d, index) => (
+              <Card key={index} sx={{ maxWidth: 720, m: 0.5, backgroundColor:"black", border:"2px solid red"}}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    image={d.image}
+                    sx={{
+                      width:330,
+                      height:144,
+                      objectFit:"cover",
+                    }}
+                  />
+                  <CardContent>
+                  <Typography gutterBottom variant="h5" component="div" sx={{ color: "white", mb:0}}>
+                      {d.title}
+                    </Typography>
+                  <Box sx={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
+                  <Typography gutterBottom component="div" sx={{ color: "white", fontSize:"16px" }}>
+                      {d.genre}
+                    </Typography>
+                    <Typography gutterBottom component="div" sx={{ color: "white", fontSize:"12px" }}>
+                      {d.released}
+                    </Typography>
+                  </Box>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            ))}
+  
+          </div>
+          <div
+          style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+    
+            }}
+          >
+            <Button
+            variant="contained" 
+            color="error"
+            size="large" 
+            sx={{mt:2}}
+            onClick={() => window.location.href = '/SignIn'}>
+              See What's On
+            </Button>
           </div>
         </Fade>
       </section>

@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { UserContext } from "../Context/UserContext";
 import { useNavigate } from "react-router-dom";
+import Footer2 from '../componets/Footer/Footer';
 
 function Payment() {
   const [subscriptionType, setSubscriptionType] = useState("1 month");
@@ -51,6 +52,7 @@ function Payment() {
   };
 
   return (
+    <>
     <Box sx={{
       paddingTop:"10vh",
       paddingBottom:"10vh",
@@ -125,8 +127,11 @@ function Payment() {
           Subscribe
         </Button>
       </Box>
+    </Box>    
     </Box>
-    </Box>
+      <Footer2></Footer2>
+    </>
+    
   );
 }
 
