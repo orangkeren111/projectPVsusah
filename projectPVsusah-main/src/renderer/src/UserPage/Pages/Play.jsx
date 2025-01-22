@@ -27,14 +27,26 @@ function PlayVideo() {
   //   })
   // }
   return (
-    <div style={{marginTop:'15vh', display:"flex", alignItems: "center", gap: "16px", zIndex: "2"}}>
+    <div style={{marginTop:'10vh', display:"flex", alignItems: "center", gap: "16px", zIndex: "2"}}>
       <div style={{width:'40%',
                   color: "white",
                   padding: "15px 40px 30px",
                   background: "linear-gradient(90deg, rgba(41,41,41,1) 0%, rgba(128,128,128,1) 35%, rgba(255,255,255,0.1) 100%)"}}>
         <h1 style={{fontSize: "40px", fontWeight: "700"}}>{currFilm.title}</h1>
         <img src={currFilm.image} alt="" width="500" height="520" style={{margin: "20px 0px"}}/>
-        <p style={{width: "100%"}}>{currFilm.description}</p>
+        <table border="0">
+          <tr>
+            <td>Year Released</td>
+            <td style={{padding: "0px 10px"}}>:</td>
+            <td>{currFilm.released}</td>
+          </tr>
+          <tr>
+            <td>Genre</td>
+            <td style={{padding: "0px 10px"}}>:</td>
+            <td>{currFilm.genre}</td>
+          </tr>
+        </table>
+        <p style={{width: "100%", marginTop: "10px"}}>{currFilm.description}</p>
       </div>
       <div style={{padding: "10px 40px"}}>
       <iframe
