@@ -15,9 +15,12 @@ function Navbar(props) {
   const location = useLocation();
 
   const [inputSearch, setInputSearch] = useState("");
-  useEffect(() => {
-    search(inputSearch)
-  })
+
+  const searching = (e) => {
+    let input = e.target.value
+    setInputSearch(input)
+    search(input)
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", transitionNavBar);
@@ -83,6 +86,9 @@ function Navbar(props) {
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create('width'),
       width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        width: '52ch',
+      },
       [theme.breakpoints.up('md')]: {
         width: '105ch',
       },
@@ -131,7 +137,8 @@ function Navbar(props) {
                   <StyledInputBase
                     placeholder="Search…"
                     inputProps={{ 'aria-label': 'search' }}
-                    onChange={(e) => setInputSearch(e.target.value)}
+                    value={inputSearch}
+                    onChange={searching}
                   />
                 </Search>
               </div>

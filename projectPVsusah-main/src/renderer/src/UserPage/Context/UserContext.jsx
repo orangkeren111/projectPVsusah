@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -6,6 +6,16 @@ export const UserContext = createContext(null);
 
 export default function UserProvider({ children }){
   const navigate = useNavigate();
+
+  const [searchData, setSearchData] = useState([]);
+
+  const [film, setFilm] = useState([]);
+  useEffect(() => {
+    window.api.loadMovie().then((data) => {
+      setFilm(data)
+      setSearchData(data)
+    })
+  }, [])
 
   const [user, setUser] = useState({
     username: '',
@@ -76,32 +86,25 @@ export default function UserProvider({ children }){
     handleSave(users)
   }
 
-  // Search Filter
-  // const [inputSearch, setInputSearch] = useState("");
-  // useEffect(() => {
-  //   window.api.getFilm().then((data) => {
-  //     setFilm(data)
-  //   })
-  // })
-  // const [film, setFilm] = useState([]);
   const search = (inputSearch) => {
-    let temp = []
-    film.map((data, idx)=>{
-      if(data.genre.includes(inputSearch)){
-        temp.push(data)
-      }
-    })
-  }
-
-  const [film, setFilm] = useState([]);
-  useEffect(() => {
-    window.api.loadMovie().then((data) => {
-      setFilm(data)
-    })
-  })
+    console.log("Search Input: ", inputSearch);
+    let temp = [];
+    if (inputSearch === "") {
+      setSearchData(film);
+      console.log("Reset Search Data: ", film);
+    } else {
+      film.forEach((data) => {
+        if (data.title.toLowerCase().includes(inputSearch)) {
+          temp.push(data);
+        }
+      });
+      setSearchData(temp);
+      console.log("Filtered Data: ", temp);
+    }
+  };
 
   return (
-    <UserContext.Provider value={{ user, login, logout, signUp, updateSubscribe, search, film }}>
+    <UserContext.Provider value={{ user, login, logout, signUp, updateSubscribe, search, film, searchData }}>
       {children}
     </UserContext.Provider>
   );

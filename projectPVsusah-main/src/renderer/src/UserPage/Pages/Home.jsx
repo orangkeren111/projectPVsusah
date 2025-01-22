@@ -17,13 +17,13 @@ const playVideo = true;
 const data = [];
 
 export default function Home() {
-    const { user, login, logout } = useContext(UserContext);
-    const [data, setData] = useState([]);
+    const { user, login, logout, searchData } = useContext(UserContext);
     const [dataHover, setDataHover] = useState(new Array(data.length).fill(false))
     const navigate = useNavigate();
+
     useEffect(()=>{
-    handleLoad()
-    }, [])
+      setDataHover(new Array(searchData.length).fill(false))
+    }, [searchData])
 
     const handleVideoClick = (id) => {
       {user.subscribed!=""?(
@@ -33,14 +33,6 @@ export default function Home() {
       )}
       
     };
-
-    const handleLoad = () => {
-      window.api.loadMovie().then((data) => {
-        setData(data)
-        setDataHover(new Array(data.length).fill(false))
-        console.log(data)
-      })
-    }
     
     const theme = createTheme({
       palette: {
@@ -92,7 +84,7 @@ export default function Home() {
       
     }
     const handleExitHover = ()=>{
-      setDataHover(new Array(data.length).fill(false))
+      setDataHover(new Array(searchData.length).fill(false))
     }
 
     return (
@@ -112,7 +104,7 @@ export default function Home() {
         <Grid
             container spacing={3} justifyContent="center"
         >
-        {data.map((d, index)=>(
+        {searchData.map((d, index)=>(
             <Grid item xs={3} sm={3} md={3} key={d.title}>
             <Card sx={{ maxWidth: 300, transition: 'background-color 0.3s ease, transform 0.3s ease',
                       '&:hover': {
