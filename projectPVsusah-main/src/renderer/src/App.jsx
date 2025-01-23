@@ -70,6 +70,7 @@ function App() {
           <Route path="/play/:id" element={<Play />} />
           <Route path="/payment" element={<Payment />} />
 
+
           {/* Admin Page */}
           <Route path="/" element={<Layout />}>
             <Route path="/dashboard" element= {<DashboardPage />} />

@@ -10,7 +10,7 @@ import WelcomePageBanner from "../images/WelcomePageBanner.jpeg";
 import { Box, Typography } from "@mui/material";
 
 function SignIn() {
-  const { login} = useContext(UserContext);
+  const {login} = useContext(UserContext);
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -47,7 +47,6 @@ function SignIn() {
   return (
     <section
       style={{
-          height: "36rem", 
           width: "100%", 
           height:"120%",
           background: `linear-gradient(0deg, hsl(0deg 0% 0% / 50%) 0%, hsl(0deg 0% 0% / 50%) 35%),url(${WelcomePageBanner})`,
@@ -79,19 +78,21 @@ function SignIn() {
                 <Typography 
                 sx={{      
                   fontSize:"24px", 
-                  fontWeight: 'bold', // font-bold
+                  fontWeight: 'bold',
                   color: 'white',}}>
                   Log in to your account
                 </Typography>
                 <form
                   onSubmit={handleSubmit}
-                  className="space-y-4 md:space-y-6"
-                  action="#"
+                  style={{
+                    paddingTop:"32px",
+                    paddingBottom:"32px"
+                  }}
                 >
                   <div>
                     <label
                       for="email"
-                      className="block mb-2 text-sm font-medium text-white dark:text-white"
+                      className="block mb-4 text-sm font-medium text-white dark:text-white"
                     >
                       Your email
                     </label>
@@ -112,7 +113,7 @@ function SignIn() {
                   <div>
                     <label
                       for="password"
-                      className="block mb-2 text-sm font-medium text-white dark:text-white"
+                      className="block mt-4 mb-4 text-sm font-medium text-white dark:text-white"
                     >
                       Password
                     </label>
@@ -121,11 +122,11 @@ function SignIn() {
                       name="password"
                       id="password"
                       placeholder="••••••••"
-                      className={
+                      className={ `mb-0.5 ${
                         ErrorMessage
                           ? "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  border-2 border-red-700 dark:bg-gray-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 placeholder:text-white"
                           : "bg-stone-700 text-white sm:text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 placeholder:text-white"
-                      }
+                      }`}
                       required=""
                       onChange={(e) => setPassword(e.target.value)}
                     ></input>
@@ -174,7 +175,7 @@ function SignIn() {
                   </div>
                   <button
                     type="submit"
-                    className={`w-full text-white ${
+                    className={`w-full text-white mt-4 ${
                       loader
                         ? `bg-stone-700`
                         : `bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-primary-300`
@@ -183,7 +184,7 @@ function SignIn() {
                     {loader ? <ClipLoader color="#ff0000" /> : `Log in`}
                   </button>
                   <button
-                    className={`flex justify-center items-center w-full text-white ${
+                    className={`flex justify-center items-center w-full text-white mt-2 ${
                       loader
                         ? `bg-stone-700`
                         : `bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300`

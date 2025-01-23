@@ -19,6 +19,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import { Box, Button } from "@mui/material";
+import AppleIcon from '@mui/icons-material/Apple';
+import AdbIcon from '@mui/icons-material/Adb';
+import GoogleIcon from '@mui/icons-material/Google';
+import MicrosoftIcon from '@mui/icons-material/Microsoft';
 
 function Welcome() {
   const [data, setData] = useState([]);
@@ -210,6 +214,12 @@ function Welcome() {
                 }}>
                   Stream Filmkan from just about any phone, tablet, smart TV, gaming consoles, or PC.
                 </h1>
+                <div style={{marginLeft:"24px"}}>
+                  <AppleIcon sx={{color:"white", fontSize:"45px"}}></AppleIcon>
+                  <AdbIcon sx={{color:"white",fontSize:"45px"}}></AdbIcon>
+                  <GoogleIcon sx={{color:"white",fontSize:"45px"}}></GoogleIcon>
+                  <MicrosoftIcon sx={{color:"white",fontSize:"45px"}}></MicrosoftIcon>
+                </div>
               </div>
               <div style={{
                 display: 'flex', 
@@ -262,10 +272,10 @@ function Welcome() {
 
           <div style={{
               display: 'flex', 
-              flexWrap: 'wrap',    
-              marginLeft: '4rem', 
+              flexWrap: 'wrap',   
+              justifyContent:"center", 
               gap: '1rem',  
-              width:'120rem',    
+              width:'100vw',    
             }}>
             {data.map((d, index) => (
               <Card key={index} sx={{ maxWidth: 720, m: 0.5, backgroundColor:"black", border:"2px solid red"}}>

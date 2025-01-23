@@ -36,7 +36,7 @@ const ShowSlides = () => {
           style={{ display: index === currentSlide ? "block" : "none", width:"100vw",height:"42vw", overflowx:"hidden", position:"relative"}}
         >
           <img src={slide.src} alt={`Slide ${index + 1}` } style={{width:"100%", height:"100%", objectFit:"fill"}}/>
-          <div style={{marginLeft:"80rem", fontSize:"32px", color:"yellow", position:"absolute"}}className="text">{slide.caption}</div>
+          <div style={{marginLeft:"76rem", fontSize:"32px", color:"white", position:"absolute", backgroundColor:"red", borderRadius:"6px", padding:"5px 15px"}}className="text">{slide.caption}</div>
         </div>
       ))}
     </div>

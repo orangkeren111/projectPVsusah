@@ -1,4 +1,4 @@
-import { Box, Card, Typography, Container, Grid, Grid2, Button, Stack } from '@mui/material';
+import { Box, Card, Typography, Container, Grid, Grid2, Button, Stack, Dialog, DialogTitle, DialogContent } from '@mui/material';
 import * as React from 'react';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -15,14 +15,27 @@ import { UserContext } from '../Context/UserContext';
 import Footer2 from '../componets/Footer/Footer';
 import zIndex from '@mui/material/styles/zIndex';
 import Carousel from "../componets/Carousel/Carousel" 
+import PortraitIcon from '@mui/icons-material/Portrait';
 
 const playVideo = true;
 const data = [];
 
+
 export default function Home() {
-    const { user, login, logout, searchData } = useContext(UserContext);
+    const { user, login, logout, searchData, profile, setProfile } = useContext(UserContext);
     const [dataHover, setDataHover] = useState(new Array(data.length).fill(false))
     const navigate = useNavigate();
+
+    const [open, setOpen] = useState(false);
+    const handleClose = () => {
+      setOpen(false)
+      setProfile(false);
+    };
+    useEffect(()=>{
+      if (profile === true){
+        setOpen(true)
+      }
+    } ,[profile])
 
     useEffect(()=>{
       setDataHover(new Array(searchData.length).fill(false))
@@ -77,7 +90,6 @@ export default function Home() {
       },
     });
     
-    
     const handleHover = (index)=>{
       if (playVideo){
         let dataTemp = [...dataHover];
@@ -90,6 +102,8 @@ export default function Home() {
       setDataHover(new Array(searchData.length).fill(false))
     }
 
+
+
     return (
       <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -99,7 +113,7 @@ export default function Home() {
         </Carousel>
 
         <Box sx={{ marginTop: 4, padding: 3 }}>
-          <Typography sx={{fontSize:"32px"}}>
+          <Typography sx={{fontSize:"26px"}}>
             Top Pick For You 💕
           </Typography>
         <Grid
@@ -123,7 +137,6 @@ export default function Home() {
                       width="max" image={d.image}  />
                       <CardContent>
                         <Typography variant="h2" sx={{fontSize:'1.4vw'}}>{d.title}</Typography>
-                        {/* <Typography variant='body1' sx={{fontSize:'1.25vw'}}>{d.released}</Typography> */}
                           <Box sx={{display:'flex', justifyContent:'space-between'}}>
                             <Typography variant="body3" sx={{ color: 'text.secondary', fontSize:'1vw' }}>
                                 {d.genre} - {d.released}
@@ -142,7 +155,35 @@ export default function Home() {
         </Grid>
         </Box>
         </Box>
-        <Footer2></Footer2>
+
+        <Dialog open={open} onClose={handleClose}>
+          <DialogTitle sx={{backgroundColor:"black", textAlign:"center"}} >Profile</DialogTitle>
+          <DialogContent sx={{backgroundColor:"black", justifyContent:"center", alignItems:"center",minHeight: "200px", minWidth:"360px"}} >
+            <PortraitIcon sx={{marginLeft:"116px", width:"82px",height:"82px"}}/>
+              <Typography sx={{fontWeight: 'bold'}}>
+                Email:
+              </Typography>
+              <Typography sx={{color:"red", textDecoration: 'underline', mb:"6"}}>
+              {user.username}
+              </Typography>
+              <Typography sx={{fontWeight: 'bold'}}>
+                Name:
+              </Typography>
+              <Typography sx={{color:"red",textDecoration: 'underline', mb:"6"}}>
+                {user.name}
+              </Typography>
+              <Typography sx={{fontWeight: 'bold'}}>
+                Subscribe
+              </Typography>
+              <Typography sx={{color:"red", textDecoration: 'underline', mb:"6"}}>
+                {user.subscribed === "" ? "No" : "Yes"}
+              </Typography>
+          </DialogContent>
+        </Dialog>
+
+        <Footer2>
+
+        </Footer2>
         </ThemeProvider>
         
     );

@@ -14,6 +14,8 @@ export default function UserProvider({ children }){
     loadfilm()
   }, [])
 
+  const [profile, setProfile] =useState(false)
+
   const loadfilm = () =>{
         window.api.loadMovie().then((data) => {
       setFilm(data)
@@ -56,6 +58,7 @@ export default function UserProvider({ children }){
     }
     const currUser = users.find(user => user.username === username && user.password === password)
     if (currUser){
+      
       //login success
       setUser(currUser);
       return true
@@ -123,7 +126,7 @@ export default function UserProvider({ children }){
   }
 
   return (
-    <UserContext.Provider value={{ user, login, logout, signUp, updateSubscribe, search, film, searchData, searchGenre }}>
+    <UserContext.Provider value={{ user, login, logout, signUp, updateSubscribe, search, film, searchData, searchGenre, profile, setProfile }}>
       {children}
     </UserContext.Provider>
   );

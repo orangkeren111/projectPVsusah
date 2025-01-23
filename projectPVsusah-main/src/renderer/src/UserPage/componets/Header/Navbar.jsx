@@ -8,10 +8,12 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
-import { Stack, Button, Box } from "@mui/material";
+import { Stack, Button, Box, Typography, Dialog, DialogTitle, DialogContent } from "@mui/material";
+
+
 
 function Navbar(props) {
-  const { user, login, logout, search, film, searchGenre } = useContext(UserContext);
+  const { user, login, logout, search, film, searchGenre, setProfile } = useContext(UserContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -53,6 +55,10 @@ function Navbar(props) {
     logout();
   }
 
+  function Profile(){
+    setProfile(true)
+  }
+
   const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -78,6 +84,7 @@ function Navbar(props) {
     alignItems: 'center',
     justifyContent: 'center',
   }));
+
   
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
@@ -145,7 +152,7 @@ function Navbar(props) {
               <div className="flex items-center">
                 {location.pathname === "/" ? (
                   <div className="flex-shrink-0">
-                    <h1 className="py-2 font-medium text-white">Welcome, {user.name}</h1>
+                    <h1 className="py-2 font-bold text-2xl text-red-700">Welcome, {user.name}</h1>
                   </div>
                 ) : (
                   <div className="hidden md:block">
@@ -164,8 +171,8 @@ function Navbar(props) {
                 <Box sx={{backgroundColor: "grey",
                           opacity: "50%",
                           width: {
-                            sm: "52ch",
-                            md: "105ch"
+                            sm: "55vw",
+                            md: "69vw"
                           }, 
                           borderRadius: "12px", 
                           padding: "2px 10px", 
@@ -212,7 +219,7 @@ function Navbar(props) {
                   {/* Notification icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="items-center hidden w-10 h-10 pr-4 mt-auto mb-auto text-white cursor-pointer md:flex"
+                    className="items-center hidden w-10 h-10 pr-4 mt-auto mb-auto text-red-700 cursor-pointer md:flex "
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -236,6 +243,7 @@ function Navbar(props) {
                     <ul style={{zIndex: "1"}} class="absolute hidden text-white pt-1 -ml-20 group-hover:block transition ease-in-out delay-150">
                       <li>
                         <Link
+                          onClick={()=>Profile()}
                           className="cursor-pointer rounded-t bg-stone-900 font-bold hover:border-l-4 hover:bg-gradient-to-r from-[#ff000056] border-red-800 py-2 px-4 block whitespace-no-wrap transition ease-in-out delay-150"
                         >
                           Profile
@@ -315,6 +323,14 @@ function Navbar(props) {
             {(ref) => (
               <div className="md:hidden" id="mobile-menu">
                 <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                  
+                  <a
+                    onClick={()=>Profile()}
+                    className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-red-800 hover:text-white"
+                  >
+                    Profile
+                  </a>
+                  
                   <a
                     onClick={()=>SignOut()}
                     className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-red-800 hover:text-white"
@@ -327,13 +343,14 @@ function Navbar(props) {
           </Transition>
         </nav>
         <div style={{margin: "20px 0px -35px 100px", display: location.pathname === "/" && inputSearch === "" ? ("block") : ("none")}}>
-          <Stack spacing={2} direction="row">
+          <Stack spacing={4} direction="row">
             {genreFilter.map((genre) => (
               <ButtonFilter key={genre} text={genre} isActive={activeButton === genre} onClick={() => buttonSetter(genre)}></ButtonFilter>
             ))}
           </Stack>
         </div>
       </header>
+
     </>
   );
 }
