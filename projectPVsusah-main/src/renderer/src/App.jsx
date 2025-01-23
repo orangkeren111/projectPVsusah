@@ -57,7 +57,6 @@ function App() {
             ) : (
               <Home />
             )
-  
           ) : <Welcome />} />
           {currentUser.username ? (
               <>

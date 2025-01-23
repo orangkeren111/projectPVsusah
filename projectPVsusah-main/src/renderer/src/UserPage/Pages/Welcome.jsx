@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 
-
 import Footer from "../componets/Footer/Footer";
 
 import WelcomePageImage1 from "../images/WelcomePageImage1.png";
@@ -57,15 +56,15 @@ function Welcome() {
           }}>
           <div     
           style={{
-            width: "83.333%", // w-10/12
+            width: "83.333%",
             textAlign: "center",
           }}>
             <Fade duration={2000}>
               <h1         
               style={{
-                marginBottom: "0.75rem", // mb-3
-                fontSize: "1.875rem", // text-3xl
-                fontWeight: 600, // font-semibold
+                marginBottom: "0.75rem",
+                fontSize: "1.875rem", 
+                fontWeight: 600, 
                 color: "white",
               }} >
                 Your favorite entertainment, anytime you want.
@@ -173,8 +172,8 @@ function Welcome() {
       {/* Section 4 */}
             <section style={{
         backgroundColor: 'black',              
-        borderTopWidth: '1rem',                  
-        borderBottomWidth: '1rem',              
+        borderTopWidth: '0.5rem',                  
+        borderBottomWidth: '0.5rem',              
         borderTopColor: '#3f3f46',               
         borderBottomColor: '#3f3f46',            
       }}>
@@ -236,22 +235,6 @@ function Welcome() {
       {/* Section 5 */}
       <section className="bg-black">
         <Fade>
-          {/* <div className="flex justify-center">
-            <div className="flex flex-col-reverse lg:flex-row lg:items-center lg:w-9/12">
-              <div className="flex justify-center">
-                <img className="" src={WelcomePageImage4} />
-              </div>
-              <div>
-                <h1 className="mt-4 mb-6 text-4xl font-semibold text-center text-white lg:mt-0 lg:text-left lg:ml-8 lg:text-5xl xl:text-6xl">
-                  Create profiles for children.
-                </h1>
-                <h1 className="m-4 text-center text-stone-400 font-light lg:text-left lg:ml-8 lg:text-2xl lg:w-9/12">
-                  Send children on adventures with their favourite characters in
-                  a space made just for them—free with your membership.
-                </h1>
-              </div>
-            </div>
-          </div> */}
           <div style={{
             display: 'flex', 
             justifyContent: 'center', 
@@ -267,7 +250,6 @@ function Welcome() {
               width: '75%',                   
               marginLeft: '2rem', 
             }}>Playing now on Filmkan</h1>
-
           </div>
 
           <div style={{

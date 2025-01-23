@@ -20,7 +20,6 @@ import PortraitIcon from '@mui/icons-material/Portrait';
 const playVideo = true;
 const data = [];
 
-
 export default function Home() {
     const { user, login, logout, searchData, profile, setProfile } = useContext(UserContext);
     const [dataHover, setDataHover] = useState(new Array(data.length).fill(false))
@@ -47,7 +46,6 @@ export default function Home() {
       ):(
         navigate(`/payment`)
       )}
-      
     };
     
     const theme = createTheme({
@@ -66,27 +64,27 @@ export default function Home() {
         MuiCard: {
             styleOverrides: {
                 root: {
-                    backgroundColor: '#212121', 
+                    backgroundColor: '#ffffff', 
                 },
             },
         },
       
-        MuiMenu: {
-          styleOverrides: {
-            paper: {
-              color: '#ffffff', 
-              backgroundColor: '#333333', 
-            },
-          },
-        },
-        MuiMenuItem: {
-          styleOverrides: {
-            root: {
-              backgroundColor: '#333333',
-              color: '#ffffff',
-            },
-          },
-        },
+        // MuiMenu: {
+        //   styleOverrides: {
+        //     paper: {
+        //       color: '#ffffff', 
+        //       backgroundColor: 'red', 
+        //     },
+        //   },
+        // },
+        // MuiMenuItem: {
+        //   styleOverrides: {
+        //     root: {
+        //       backgroundColor: '#333333',
+        //       color: '#ffffff',
+        //     },
+        //   },
+        // },
       },
     });
     
@@ -96,12 +94,11 @@ export default function Home() {
         dataTemp[index] = true;
         setDataHover(dataTemp)
       }
-      
     }
+
     const handleExitHover = ()=>{
       setDataHover(new Array(searchData.length).fill(false))
     }
-
 
 
     return (

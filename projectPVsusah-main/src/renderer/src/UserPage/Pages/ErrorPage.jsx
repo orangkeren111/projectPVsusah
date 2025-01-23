@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 function ErrorPage() {
   const navigate = useNavigate();
   return (
-    <div className="h-screen flex items-center justify-center">
-      <div className="flex flex-col items-center">
-        <h1 className="text-white text-center text-9xl font-black mb-2">
+    <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <h1 style={{ color: 'white', textAlign: 'center', fontSize: '6rem', fontWeight: 900, marginBottom: '0.5rem' }}>
           404 error
         </h1>
-        <h1 className="text-white text-center text-5xl font-bold mb-10">
+        <h1 style={{ color: 'white', textAlign: 'center', fontSize: '3rem', fontWeight: 'bold', marginBottom: '2.5rem' }}>
           Page not found
         </h1>
         <button
