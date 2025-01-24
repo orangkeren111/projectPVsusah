@@ -24,10 +24,12 @@ import GoogleIcon from '@mui/icons-material/Google';
 import MicrosoftIcon from '@mui/icons-material/Microsoft';
 
 function Welcome() {
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const image1 = WelcomePageImage1;
+
     window.api.loadMovie().then((data) => {
       setData(data.slice(0, 4));
     })
@@ -64,7 +66,7 @@ function Welcome() {
               style={{
                 marginBottom: "0.75rem",
                 fontSize: "1.875rem", 
-                fontWeight: 600, 
+                fontWeight: 600,
                 color: "white",
               }} >
                 Your favorite entertainment, anytime you want.
@@ -117,57 +119,8 @@ function Welcome() {
             </Fade>
           </div>
         </div>
-        {/* <div
-          style={{
-            backgroundImage:
-              "linear-gradient(hsl(0deg 0% 0% / 0%), hsl(0deg 0% 0% / 38%), hsl(0deg 0% 7%))",
-          }}
-        ></div> */}
       </div>
 
-      {/* Section 2 */}
-      {/* <section className="bg-black border-y-8 border-y-zinc-800">
-        <Fade>
-          <div className="flex justify-center md:py-8">
-            <div className="lg:flex lg:items-center lg:w-9/12">
-              <div>
-                <h1 className="mt-2 mb-6 text-4xl font-semibold text-center text-white lg:mt-0 lg:text-left lg:ml-8 lg:text-5xl xl:text-6xl">
-                  Enjoy on your TV.
-                </h1>
-                <h1 className="m-4 text-center text-stone-400 font-light lg:text-left lg:ml-8 lg:text-2xl lg:w-9/12">
-                  Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
-                  Blu-ray players and more.
-                </h1>
-              </div>
-              <div className="flex justify-center">
-                <img className="" src={WelcomePageImage1} />
-              </div>
-            </div>
-          </div>
-        </Fade>
-      </section> */}
-
-      {/* Section 3 */}
-      {/* <section className="bg-black">
-        <Fade>
-          <div className="flex justify-center">
-            <div className="flex flex-col-reverse lg:flex-row lg:items-center lg:w-9/12">
-              <div className="flex justify-center">
-                <img className="" src={WelcomePageImage2} />
-              </div>
-              <div>
-                <h1 className="mx-4 mt-4 mb-6 text-4xl font-semibold text-center text-white lg:mt-0 lg:text-left lg:ml-8 lg:text-5xl xl:text-6xl">
-                  Download your shows to watch offline.
-                </h1>
-                <h1 className="m-4 text-center text-stone-400 font-light lg:text-left lg:ml-8 lg:text-2xl lg:w-9/12">
-                  Save your favourites easily and always have something to
-                  watch.
-                </h1>
-              </div>
-            </div>
-          </div>
-        </Fade>
-      </section> */}
 
       {/* Section 4 */}
             <section style={{
@@ -294,7 +247,6 @@ function Welcome() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-    
             }}
           >
             <Button
@@ -302,7 +254,7 @@ function Welcome() {
             color="error"
             size="large" 
             sx={{mt:2}}
-            onClick={() => window.location.href = '/SignIn'}>
+            onClick={() => window.location.href = '/Signin'}>
               See What's On
             </Button>
           </div>

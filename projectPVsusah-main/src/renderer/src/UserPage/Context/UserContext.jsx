@@ -9,15 +9,24 @@ export default function UserProvider({ children }){
 
   const [searchData, setSearchData] = useState([]);
 
+  // useEffect(() => {
+  //   window.api.loadMovie().then((data) => {
+  //     setFilm(data)
+  //     setSearchData(data)
+  //   })
+  // }, [])
+
   const [film, setFilm] = useState([]);
   useEffect(() => { 
     loadfilm()
   }, [])
 
+
+
   const [profile, setProfile] =useState(false)
 
   const loadfilm = () =>{
-        window.api.loadMovie().then((data) => {
+      window.api.loadMovie().then((data) => {
       setFilm(data)
       setSearchData(data)
     })
@@ -33,6 +42,7 @@ export default function UserProvider({ children }){
   useEffect(()=>{
       handleLoad()
   }, [])
+
   const handleSave = () => {
     window.api.save(users)
   }
@@ -58,7 +68,7 @@ export default function UserProvider({ children }){
     }
     const currUser = users.find(user => user.username === username && user.password === password)
     if (currUser){
-      
+      loadfilm()
       //login success
       setUser(currUser);
       return true
@@ -78,6 +88,7 @@ export default function UserProvider({ children }){
       //signup failed
       return false
     } else{
+      loadfilm()
       //signup success
       users.push({ username: username, password: password, name: name, subscribed:"" })
       handleSave(users)
@@ -126,7 +137,7 @@ export default function UserProvider({ children }){
   }
 
   return (
-    <UserContext.Provider value={{ user, login, logout, signUp, updateSubscribe, search, film, searchData, searchGenre, profile, setProfile }}>
+    <UserContext.Provider value={{ user, login, logout, signUp, updateSubscribe, search, film, searchData, setSearchData, searchGenre, profile, setProfile }}>
       {children}
     </UserContext.Provider>
   );

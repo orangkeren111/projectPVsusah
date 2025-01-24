@@ -22,13 +22,14 @@ import Sales from "./AdminPage/Sales";
 import Layout from "./AdminPage/Layout";
 
 function App() {
-  const { user, login, logout } = useContext(UserContext);
+  const { user, login, logout, setSearchData, film } = useContext(UserContext);
   const location = useLocation();
   const [currentUser, setCurrentUser] = useState({username: '', password: ''})
   const [backgroundColor, setBackgroundColor] = useState("bg-user-bg");
   
   useEffect(() => {
       setCurrentUser(user);
+      setSearchData(film);
       console.log(user);
       if(currentUser.username === "admin@gmail.com") {
         setBackgroundColor("bg-admin-bg")
