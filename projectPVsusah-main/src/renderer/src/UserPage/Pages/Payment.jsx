@@ -31,7 +31,7 @@ function Payment() {
   const getCurrDate = ()=>{
     const now = new Date();
     const year = now.getFullYear();
-    const month = now.getMonth() + 1; // Months are zero-based
+    const month = now.getMonth() + 1;
     const day = now.getDate();
     
     return (`${year}-${month}-${day}`);
@@ -43,11 +43,31 @@ function Payment() {
     const seconds = now.getSeconds();
     return (`${hours}:${minutes}:${seconds}`)
   }
+  const addDate = ()=>{
+    const now = new Date().getTime();
+    let day = 0;
+    if (subscriptionType == "1 month"){
+      day = 30
+    } else if (subscriptionType == "3 month"){
+      day = 90
+    } else{
+      day = 365
+    }
+    const tanggal = (now + day*1000*60*60*24);
+    let date = new Date(tanggal)
+    console.log(date);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const days = date.getDate();
+    let x = [day, `${year}-${month}-${days}`]
+    return x
+  }
 
   const handleSubscribe = () => {
-    updateSubscribe();
-    navigate("/")
+    navigate("/");
+    let x = addDate();
     const dataNota = {name: user.name, cost: parseFloat(totalCost), type: subscriptionType, date: getCurrDate(), time: getCurrTime()}
+    updateSubscribe([x[0], x[1]])
     window.api.makeInvoice(dataNota)
   };
 
