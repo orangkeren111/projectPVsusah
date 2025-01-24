@@ -61,7 +61,7 @@ app.whenReady().then(() => {
     fs.writeFileSync("./user.json", JSON.stringify(users));
   });
 
-  ipcMain.handle("makeInvoice", (event, nota) => {
+  ipcMain.handle("makeInvoice", (event, [nota, user]) => {
     const receipt = `--------------------------------------------------
                  NETFLIX
           1234 Market Street, City

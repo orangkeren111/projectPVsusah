@@ -27,7 +27,7 @@ export default function UserProvider({ children }){
     username: '',
     password: '',
     name:'',
-    subscribed:''
+    subscribed:'',
   });
   const [users, setUsers] = useState([])
   useEffect(()=>{
@@ -86,9 +86,11 @@ export default function UserProvider({ children }){
     }
   }
 
-  const updateSubscribe = ()=>{
+  const updateSubscribe = (arrData)=>{
     let newUser = user
     newUser.subscribed = "yes"
+    newUser.type = arrData[0]
+    newUser.expired_date = arrData[1]
     setUser(newUser)
     handleSave(users)
   }
