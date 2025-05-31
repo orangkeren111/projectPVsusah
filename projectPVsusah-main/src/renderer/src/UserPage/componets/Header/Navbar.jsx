@@ -11,7 +11,6 @@ import { styled, alpha } from '@mui/material/styles';
 import { Stack, Button, Box, Typography, Dialog, DialogTitle, DialogContent } from "@mui/material";
 
 
-
 function Navbar(props) {
   const { user, login, logout, search, film, searchGenre, setProfile } = useContext(UserContext);
   const navigate = useNavigate();

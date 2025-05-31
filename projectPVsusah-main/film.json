@@ -37,7 +37,7 @@
   },
   {
     "id": "4",
-    "title": "Parasite",
+    "title": "Parasites",
     "released": "2019",
     "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
     "image": "https://i.ytimg.com/vi/5xH0HfJHsaY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBfJSQz1mnQHGcZORCXLXU2sZpxxA",
@@ -133,5 +133,59 @@
     "image": "https://i.ytimg.com/vi/kp-X5kcn3Js/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD3FflOnSIz1Dyt7liIzshLCRMjfQ",
     "videoID": "kp-X5kcn3Js",
     "genre": "Horror, Thriller"
+  },
+  {
+    "id": 15,
+    "title": "Horor1",
+    "released": 1900,
+    "description": "An expectant couple's intimate weekend turns to terror when they discover their secluded country inn is a haunted maternity home where unwanted infants and mothers were murdered.",
+    "image": "https://i.ytimg.com/vi/rKcWqZp4qyk/maxresdefault.jpg",
+    "videoID": "ATi3GdospAo",
+    "genre": "Horror"
+  },
+  {
+    "id": 16,
+    "title": "Money Heist",
+    "released": "2024",
+    "description": "When the national mint and a touring school group are held hostage by robbers, police believe that the thieves have no way out. Little do they know that the thieves have a bigger plan in store.",
+    "image": "https://i.ytimg.com/vi/1FhmnB6SwBc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD1aVvIlhZE7eIbdwlrSRS4Dw5mtg",
+    "videoID": "ZFbEzUYQRt0",
+    "genre": "Action, Sci-Fi"
+  },
+  {
+    "id": 17,
+    "title": "hello2",
+    "released": "2024",
+    "description": "An expectant couple's intimate weekend turns to terror when they discover their secluded country inn is a haunted maternity home where unwanted infants and mothers were murdered.",
+    "image": "https://i.ytimg.com/vi/rKcWqZp4qyk/maxresdefault.jpg",
+    "videoID": "ATi3GdospAo",
+    "genre": "Thriller, Horror"
+  },
+  {
+    "id": 18,
+    "title": "horor2",
+    "released": 1900,
+    "description": "An expectant couple's intimate weekend turns to terror when they discover their secluded country inn is a haunted maternity home where unwanted infants and mothers were murdered.",
+    "image": "https://i.ytimg.com/vi/rKcWqZp4qyk/maxresdefault.jpg",
+    "videoID": "ATi3GdospAo",
+    "genre": "Horror"
+  },
+  {
+    "id": 19,
+    "title": "horor3",
+    "released": 1900,
+    "description": "An expectant couple's intimate weekend turns to terror when they discover their secluded country inn is a haunted maternity home where unwanted infants and mothers were murdered.",
+    "image": "https://i.ytimg.com/vi/rKcWqZp4qyk/maxresdefault.jpg",
+    "videoID": "ATi3GdospAo",
+    "genre": "Horror"
+  },
+  {
+    "id": 20,
+    "title": "Horor5",
+    "released": 1900,
+    "description": "An expectant couple's intimate weekend turns to terror when they discover their secluded country inn is a haunted maternity home where unwanted infants and mothers were murdered.",
+    "image": "https://i.ytimg.com/vi/rKcWqZp4qyk/maxresdefault.jpg",
+    "videoID": "ATi3GdospAo",
+    "genre": "Sci-Fi"
   }
 ]
